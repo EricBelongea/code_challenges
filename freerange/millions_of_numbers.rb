@@ -103,7 +103,8 @@ longarr1 = (1..10000).to_a
 longarr2 = (10001..20000).to_a
 
 # Array 3
-longarr3 = (20001..30000).to_a# Ensure five common numbers
+longarr3 = (20001..30000).to_a
+# Ensure five common numbers
 common_numbers = [5, 15, 30, 40, 50]
 
 # Add common numbers to arrays
