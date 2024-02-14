@@ -97,13 +97,13 @@ puts matches.inspect
 
 
 # Array 1
-longarr1 = (1..50).to_a
+longarr1 = (1..1000).to_a
 
 # Array 2
-longarr2 = (25..74).to_a
+longarr2 = (1001..2000).to_a
 
 # Array 3
-longarr3 = (20..69).to_a
+longarr3 = (2001..3000).to_a
 
 # Ensure five common numbers
 common_numbers = [5, 15, 30, 40, 50]
