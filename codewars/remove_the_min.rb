@@ -15,6 +15,27 @@
 # * Input: [2,2,1,2,1], output = [2,2,2,1]
 
 
+def remove_smallest(numbers)
+  # sorted = numbers.sort
+  # a = sorted.shift
+  # puts sorted.inspect
+
+  # min = nums.delete(nums.min)
+
+  nums = numbers
+  min = nums.slice!(nums.index(nums.min))
+  puts nums.inspect
+end
+
+q = [1,2,3,4,5]
+w = [1,2,1,3,4]
+e = [5,4,3,2,6]
+r = [77]
+
+remove_smallest(q)
+remove_smallest(w)
+remove_smallest(e)
+remove_smallest(r)
 
 
 
