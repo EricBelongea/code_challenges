@@ -97,15 +97,13 @@ puts matches.inspect
 
 
 # Array 1
-longarr1 = (1..1000).to_a
+longarr1 = (1..10000).to_a
 
 # Array 2
-longarr2 = (1001..2000).to_a
+longarr2 = (10001..20000).to_a
 
 # Array 3
-longarr3 = (2001..3000).to_a
-
-# Ensure five common numbers
+longarr3 = (20001..30000).to_a# Ensure five common numbers
 common_numbers = [5, 15, 30, 40, 50]
 
 # Add common numbers to arrays
@@ -119,6 +117,7 @@ longarr2.shuffle!
 longarr3.shuffle!
 
 require 'benchmark'
+include Benchmark
 
 # Measure time for the original solution
 time_original = Benchmark.measure do
