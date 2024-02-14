@@ -15,7 +15,7 @@
 #     nums_3 = [1, 2, 5, 8, 9]
 #     find_matches(nums_1, nums_2, nums_3)
 #     => [2, 5]
-   
+
 #     #JavaScript
 #     nums1 = [1, 2, 4, 5, 8]
 #     nums2 = [2, 3, 5, 7, 9]
@@ -73,6 +73,8 @@ arr3 = [5, 6, 7, 8, 9]
 
 matches = find_matches_optimized(arr1, arr2, arr3)
 puts matches.inspect
+
+
 # Below is the GPT explanation to why sets are more effiecient than arrays. 
 
 # Transforming arrays into sets increases efficiency mainly because sets offer faster lookup times compared to arrays. In Ruby, arrays use linear search for element lookup,
@@ -92,3 +94,59 @@ puts matches.inspect
 # seen_in_arr2.include?(element) has O(1) time complexity on average.
 # seen_in_arr3.include?(element) has O(1) time complexity on average.
 # By using sets, the overall time complexity of the find_matches_optimized function is significantly improved, resulting in a more efficient solution for finding common elements in three arrays.
+
+
+# Array 1
+longarr1 = (1..50).to_a
+
+# Array 2
+longarr2 = (25..74).to_a
+
+# Array 3
+longarr3 = (20..69).to_a
+
+# Ensure five common numbers
+common_numbers = [5, 15, 30, 40, 50]
+
+# Add common numbers to arrays
+longarr1.push(*common_numbers)
+longarr2.push(*common_numbers)
+longarr3.push(*common_numbers)
+
+# Shuffle arrays to randomize order
+longarr1.shuffle!
+longarr2.shuffle!
+longarr3.shuffle!
+
+require 'benchmark'
+
+# Measure time for the original solution
+time_original = Benchmark.measure do
+  find_matches(longarr1, longarr2, longarr3)
+end.total
+
+puts "Original solution time: #{time_original}"
+
+# Measure time for the optimized solution
+time_optimized = Benchmark.measure do
+  find_matches_optimized(longarr1, longarr2, longarr3)
+end.total
+
+puts "Optimized solution time: #{time_optimized}"
+
+
+
+
+
+time_original = Benchmark.measure do
+  find_matches(nums_1, nums_2, nums_3)
+end.total
+
+puts "Original solution time: #{time_original}"
+
+# Measure time for the optimized solution
+time_optimized = Benchmark.measure do
+  find_matches_optimized(nums_1, nums_2, nums_3)
+end.total
+
+puts "Optimized solution time: #{time_optimized}"
